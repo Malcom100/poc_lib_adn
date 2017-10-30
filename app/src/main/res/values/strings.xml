@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">LibraryAdn</string>
+
+    <string name="login_field_lastname">name</string>
+    <string name="login_field_firstname">firstname</string>
+    <string name="login_field_email">email</string>
+    <string name="login_field_number">number</string>
+    <string name="login_field_picture">picture</string>
+    <string name="login_btn_login">Login</string>
+
+    <string name="login_error">Please fill fields</string>
+    <string name="login_success">You're login !!</string>
 </resources>
