@@ -20,5 +20,6 @@ class LoginPresenter(mView: LoginContract.View) : LoginContract.Presenter {
 
     override fun login(name: String, lastName: String, email: String, number: String, picture: String, context : Context) {
             LibraryBuilder.getInstance().createUser(name,lastName,email,number,picture,context)
+
         }
     }

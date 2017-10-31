@@ -1,7 +1,7 @@
 package com.gael.projects.design.models.utils
 
 import android.content.Context
-import com.gael.projects.design.models.User
+import com.gael.projects.design.models.entities.User
 import com.gael.projects.design.models.login.LoginActivity
 
 /**
@@ -10,7 +10,7 @@ import com.gael.projects.design.models.login.LoginActivity
 
 open class LibraryBuilder {
 
-    lateinit var user : User
+    private lateinit var user : User
 
     companion object {
         private var instance_library : LibraryBuilder? = null
@@ -50,6 +50,26 @@ open class LibraryBuilder {
                 .build()
         if(name.isEmpty() || lastName.isEmpty() || email.isEmpty() || number.isEmpty() || picture.isEmpty()) {
             context.startActivity(LoginActivity.newIntent(context,user))
+
         }
+
+    }
+
+    fun getUser() : User { return user}
+
+    fun setUserName(newValue : String) : Boolean {
+        if(user == null){
+            return false
+        }
+        user.name = newValue
+        return true
+    }
+
+    fun setEmail(newValue : String) : Boolean {
+        if(user == null){
+            return false
+        }
+        user.email = newValue
+        return true
     }
 }
