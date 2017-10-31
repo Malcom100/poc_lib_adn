@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="value_1">5dp</dimen>
+    <dimen name="value_2">10dp</dimen>
+    <dimen name="value_3">15dp</dimen>
+    <dimen name="value_4">20dp</dimen>
+    <dimen name="value_5">25dp</dimen>
+    <dimen name="value61">30dp</dimen>
+
+    <dimen name="value_11">7dp</dimen>
+    <dimen name="value_22">12dp</dimen>
+    <dimen name="value_33">18dp</dimen>
+    <dimen name="value_44">22dp</dimen>
+</resources>
