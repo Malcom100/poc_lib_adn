@@ -1,4 +1,4 @@
-package com.gael.projects.design.models
+package com.gael.projects.design.models.entities
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -10,12 +10,16 @@ import android.os.Parcelable
 
 class User() : Parcelable{
 
+    internal var name : String = ""
 
-    var name : String = ""
     var lastName : String = ""
+
     var email : String = ""
+
     var number : String = ""
+
     var picture : String = ""
+
 
     constructor(parcel: Parcel) : this() {
         name = parcel.readString()
@@ -38,6 +42,10 @@ class User() : Parcelable{
         this.name = userBuilder.name
     }
 
+    override fun toString() : String {
+        return name.plus(" ").plus(lastName).plus(" ").plus(email)
+    }
+
     class UserBuilder {
 
         var name : String = ""
@@ -46,27 +54,27 @@ class User() : Parcelable{
         var number : String = ""
         var picture : String = ""
 
-        fun addName(newName : String) : UserBuilder{
+        fun addName(newName : String) : UserBuilder {
             name = newName
             return this
         }
 
-        fun addLastName(newLastName : String) : UserBuilder{
+        fun addLastName(newLastName : String) : UserBuilder {
             lastName = newLastName
             return this
         }
 
-        fun addEmail(newEmail : String) : UserBuilder{
+        fun addEmail(newEmail : String) : UserBuilder {
             email = newEmail
             return this
         }
 
-        fun addNUmber(newNumber : String) : UserBuilder{
+        fun addNUmber(newNumber : String) : UserBuilder {
             number = newNumber
             return this
         }
 
-        fun addPicture(newpicture : String) : UserBuilder{
+        fun addPicture(newpicture : String) : UserBuilder {
             picture = newpicture
             return this
         }

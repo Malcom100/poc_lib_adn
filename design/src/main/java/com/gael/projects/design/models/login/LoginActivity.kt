@@ -3,11 +3,9 @@ package com.gael.projects.design.models.login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import com.gael.projects.design.R
-import com.gael.projects.design.models.User
-import kotlinx.android.synthetic.main.activity_login.*
+import com.gael.projects.design.models.entities.User
 
 /**
  * Created by gael on 30.10.17.
@@ -27,8 +25,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         var fragment : LoginFragment? = supportFragmentManager.findFragmentById(R.id.container) as? LoginFragment
@@ -40,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         loginPresenter = LoginPresenter(fragment)
     }
 
-    private fun getUser(intent : Intent) : User{
+    private fun getUser(intent : Intent) : User {
         var user : User? = null
         if(intent != null && intent.hasExtra(LoginActivity.KEY_USER)){
             user = intent.getParcelableExtra<User>(LoginActivity.KEY_USER)

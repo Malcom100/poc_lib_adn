@@ -43,7 +43,7 @@ import kotlinx.android.synthetic.main.fragment_login.*
         super.onViewCreated(view, savedInstanceState)
 
         login_btn_login.setOnClickListener(View.OnClickListener { v ->
-            mPresenter.login(login_lastname.text.toString(),login_lastname.text.toString(),login_email.text.toString(),login_number.text.toString(),"",activity)
+            mPresenter.login(login_lastname.text.toString(),login_lastname.text.toString(),login_email.text.toString(),login_number.text.toString(),"",activity.applicationContext)
         })
     }
 
